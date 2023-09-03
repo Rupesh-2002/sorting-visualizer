@@ -1,0 +1,368 @@
+*{
+  padding : 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+  overflow-x: hidden;
+  position: relative;
+
+}
+
+.overlay{
+  background-color: rgba(36, 27, 27, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay-active{
+  transform: translateX(0);
+}
+
+/* Menu close button css */
+.gg-close {
+  box-sizing: border-box;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  z-index: 10;
+  margin: auto;
+  display: none;
+ }
+ 
+ .gg-close::after,
+ .gg-close::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  top: 8px;
+  left: 1px
+ }
+ 
+ .gg-close::after {
+  transform: rotate(-45deg)
+ } 
+
+/* Menu button css */
+ .gg-menu {
+  transform: scale(var(--ggs,1));
+ }
+ 
+ .gg-menu,
+ .gg-menu::after,
+ .gg-menu::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: auto;
+  border-radius: 3px;
+  background: currentColor
+ }
+ 
+ .gg-menu{
+  display: none;
+  z-index: 10;
+ }
+ .gg-menu::after,
+ .gg-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px
+ }
+ 
+ .gg-menu::after {
+  top: 6px
+ }
+.full-app-title{
+  font-size: 2rem;
+  padding-left: 2rem;
+  color: white;
+}
+
+.small-app-title{
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  display: none;
+  color: white;
+
+}
+
+.short-app-title{
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  display: none;
+  color: white;
+
+}
+.header{
+  
+  background-color: rgb(96, 94, 113);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+ 
+}
+.nav-bar{
+  display: flex;
+  gap: 2rem;
+}
+.nav1{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav2{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.bar-width-label{
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color:white;
+}
+
+.bar-width-element{
+  display: flex;
+  flex-direction: column;
+  width: 9rem;
+}
+.animation-speed{
+  
+  padding : 0.3rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+   background-color:  #f71695;
+   color: white;
+   transition: 1s;
+   text-align: center;
+}
+.new-array-button{
+   
+   padding : 0.3rem;
+   font-size: 1.2rem;
+   border-radius: 0.5rem;
+   background-color: #ffbd03;
+   color: white;
+   transition: 0.4s;
+
+}
+.sort-algorithm-button{
+   font-size: 1.2rem;
+   padding : 0.3rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 0.5rem;
+   background-color:  #a881af;
+   color: white;
+   transition: 0.4s;
+}
+.algo{
+  
+  padding : 0.3rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+   background-color:  green;
+   color: white;
+   transition: 1s;
+  text-align: center;
+}
+
+/* .algo:focus{
+  background-color: #d52814;
+} */
+
+.new-array-button:hover{
+  background-color:  #55c2da;
+}
+
+.sort-algorithm-button:hover{
+  background-color: #dd7973;
+}
+/* .bar-width-element{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 80%;
+} */
+@media screen  and (min-width : 1100px){
+    .header{
+      justify-content: space-around;
+    }
+}
+@media screen  and (max-width : 1100px){
+    .nav1{
+        /* overflow-y: scroll; */
+        position: absolute;
+        height : 100vh;
+        flex-direction: column;
+        justify-content: center;
+       
+        width: 40%;
+        right : 0;
+        top: 0;
+        transform: translateX(100%);
+        background-color: white;
+        transition: all 0.3s;
+        
+    }
+    
+    .active{
+      transform: translateX(0);
+      z-index: 1;
+    }
+    .gg-menu{
+      display: block;
+    }
+
+}
+@media screen  and (max-width : 700px){
+   .nav1{
+    width: 55%;
+   }
+}
+@media screen  and (max-width : 500px){
+   .full-app-title{
+    display: none;
+   }
+   .small-app-title{
+    display: block;
+   }
+   .nav1{
+    width: 70%;
+   }
+}
+
+
+@media screen  and (max-width : 300px){
+   
+   .small-app-title{
+    display: none;
+   }
+   .short-app-title{
+    display: block;
+   }
+
+   .nav1{
+    width: 80%;
+   }
+   
+}
+
+@media screen  and (max-width : 250px){
+    .nav1{
+      width: 100%;
+    }
+}
+
+
+
+
+
+
+input[type=range] {
+  /* height: 25px; */
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 10px 0;
+  width: 9rem;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  
+  height: 0.3rem;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2497E3;
+  
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #2497E3;
+}
+input[type=range]::-moz-range-track {
+ 
+  height: 0.3rem;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2497E3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  
+  height: 0.3rem;
+  cursor: pointer;
+  animation: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2497E3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #2497E3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #2497E3;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #2497E3;
+}
